@@ -22,12 +22,12 @@ namespace CourseWork_2018_2019_
         {
             InitializeComponent();
         }
-        private void Form2_Load(object sender, EventArgs e)
-        {
-            LoadClient();
-            DataGV();
-        }
-        private void LoadClient()
+		private void Form2_Load_1(object sender, EventArgs e)
+		{
+			LoadClient();
+			DataGV();
+		}
+		private void LoadClient()
         {
             string[] client = File.ReadAllLines("client.txt", Encoding.GetEncoding(1251));
             kC = client.Length;
@@ -43,44 +43,57 @@ namespace CourseWork_2018_2019_
         private void DataGV()
         {
             dataGridView1.Rows.Clear();
-            for(int i=0;i< kC;i++)
+            for(int i=0; i < kC;i++)
             {
                 dataGridView1.Rows.Add(kodClient[i], fio[i]);
             }
         }
-        private void dataGridView1_SelectionChanged(object seneder, EventArgs e)
-        {
-            newStr = dataGridView1.CurrentRow.Index;
-            textBox1.Text = dataGridView1.Rows[newStr].Cells[0].Value.ToString();
-            textBox2.Text = dataGridView1.Rows[newStr].Cells[0].Value.ToString();
-        }
+        
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-
-        private void button1_Click(object sender, EventArgs e)
+		private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            fio[newStr] = textBox1.Text;
+            try
+            {
+                newStr = dataGridView1.CurrentRow.Index;
+                string indexStr = (newStr + 1).ToString();
+                dataGridView1.Rows[newStr].Cells[0].Value = indexStr;
+                textBox1.Text = dataGridView1.Rows[newStr].Cells[0].Value.ToString();
+                textBox2.Text = dataGridView1.Rows[newStr].Cells[1].Value.ToString();
+            }
+            catch { }
+		}
+		private void button1_Click(object sender, EventArgs e) //Изменить
+        {
+            fio[newStr] = textBox2.Text;
             DataGV();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) //Добавить
         {
-            int kNew = kodClient[kC - 1];
-            kC++;
-            Array.Resize(ref kodClient, kC);
-            Array.Resize(ref fio, kC);
-            kNew++;
-            kodClient[kC - 1] = kNew;
-            textBox1.Text = kodClient.ToString();
-            textBox2.Text = "";
+            int newKClient = dataGridView1.RowCount + 1;
+            string newFio = textBox2.Text;
+            textBox1.Text = newKClient.ToString();
+            dataGridView1.Rows.Add(newKClient,newFio);
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e) //Сохранить
         {
-            fio[kC - 1]=textBox2.Text;
-            DataGV();
+            int countStr = dataGridView1.Rows.Count;//Считает количество строк
+            string[] saveClient = new string[countStr];
+            for (int i = 0; i < countStr; i++)
+                for (int j = 0; j < 2; j++)
+                    saveClient[i] += dataGridView1.Rows[i].Cells[j].Value + "#"; File.WriteAllLines("client.txt", saveClient, Encoding.GetEncoding(1251));
+        }
+
+        private void button4_Click(object sender, EventArgs e) //Удалить
+        {
+            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            {
+                dataGridView1.Rows.Remove(row);
+            }
         }
     }
 }
