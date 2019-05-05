@@ -83,11 +83,16 @@ namespace CourseWork_2018_2019_
         {
             int countStr = dataGridView1.Rows.Count;//Считает количество строк
             string[] saveClient = new string[countStr];
+            string[] saveOutClient = new string[countStr];
             for (int i = 0; i < countStr; i++)
+            {
+                //saveOutClient[1] += dataGridView1.Rows[i].Cells[0].Value + "#" +"\n"; File.WriteAllLines("travel.txt", saveOutClient, Encoding.GetEncoding(1251));
                 for (int j = 0; j < 2; j++)
+                {
                     saveClient[i] += dataGridView1.Rows[i].Cells[j].Value + "#"; File.WriteAllLines("client.txt", saveClient, Encoding.GetEncoding(1251));
+                }
+            }
         }
-
         private void button4_Click(object sender, EventArgs e) //Удалить
         {
             foreach (DataGridViewRow row in dataGridView1.SelectedRows)
