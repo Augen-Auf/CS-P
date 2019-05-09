@@ -47,3 +47,4 @@ C:\Users\Zver\Documents\GitHub\CS-P\CourseWork(2018-2019)\CourseWork(2018-2019)\
 C:\Users\Zver\Documents\GitHub\CS-P\CourseWork(2018-2019)\CourseWork(2018-2019)\bin\Debug\CourseWork(2018-2019).exe
 C:\Users\Zver\Documents\GitHub\CS-P\CourseWork(2018-2019)\CourseWork(2018-2019)\bin\Debug\CourseWork(2018-2019).pdb
 C:\Users\Zver\Documents\GitHub\CS-P\CourseWork(2018-2019)\CourseWork(2018-2019)\obj\Debug\CourseWork_2018_2019_.Form4.resources
+C:\Users\Zver\Documents\GitHub\CS-P\CourseWork(2018-2019)\CourseWork(2018-2019)\obj\Debug\CourseWork_2018_2019_.Form5.resources
