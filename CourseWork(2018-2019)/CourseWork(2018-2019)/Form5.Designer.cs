@@ -54,56 +54,57 @@
             this.dataGridViewTextBoxColumn4,
             this.Column3,
             this.Column4});
-            this.dataGridView2.Location = new System.Drawing.Point(84, 12);
+            this.dataGridView2.Location = new System.Drawing.Point(50, 12);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(546, 270);
+            this.dataGridView2.Size = new System.Drawing.Size(643, 270);
             this.dataGridView2.TabIndex = 5;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.FillWeight = 71.06599F;
+            this.dataGridViewTextBoxColumn1.FillWeight = 38.91396F;
             this.dataGridViewTextBoxColumn1.HeaderText = "Код поездки";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
             // dataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn2.FillWeight = 96.33428F;
+            this.dataGridViewTextBoxColumn2.FillWeight = 52.75025F;
             this.dataGridViewTextBoxColumn2.HeaderText = "Код клиента вн. ключ";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // Column1
             // 
-            this.Column1.FillWeight = 96.33428F;
+            this.Column1.FillWeight = 52.75025F;
             this.Column1.HeaderText = "Фамилия";
             this.Column1.Name = "Column1";
             // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.FillWeight = 96.33428F;
+            this.dataGridViewTextBoxColumn3.FillWeight = 52.75025F;
             this.dataGridViewTextBoxColumn3.HeaderText = "Код тура вн. ключ";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // Column2
             // 
-            this.Column2.FillWeight = 147.2626F;
+            this.Column2.FillWeight = 407.9281F;
             this.Column2.HeaderText = "Тур";
             this.Column2.Name = "Column2";
             // 
             // dataGridViewTextBoxColumn4
             // 
-            this.dataGridViewTextBoxColumn4.FillWeight = 96.33428F;
+            this.dataGridViewTextBoxColumn4.FillWeight = 62.99231F;
             this.dataGridViewTextBoxColumn4.HeaderText = "Стоимость поездки (за 1 чел. в руб.)";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // Column3
             // 
-            this.Column3.FillWeight = 96.33428F;
+            this.Column3.FillWeight = 77.15736F;
             this.Column3.HeaderText = "Количество путевок(приобретено за раз)";
             this.Column3.Name = "Column3";
             // 
             // Column4
             // 
+            this.Column4.FillWeight = 54.7575F;
             this.Column4.HeaderText = "Итого";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;

@@ -23,21 +23,24 @@ namespace CourseWork_2018_2019_
         int[] amountTours = new int[0];
         char[] d = { '#' };
         int travels = 0;
-        int newStr = 0;
         public Form5()
         {
             InitializeComponent();
+            dataGridView2.Columns[0].Width = 45;
+            dataGridView2.Columns[1].Width = 45;
+            dataGridView2.Columns[2].Width = 100;
+            dataGridView2.Columns[3].Width = 45;
+            dataGridView2.Columns[4].Width = 150;
         }
-
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
         }
-
         private void Form5_Load(object sender, EventArgs e)
         {
             dataGridView2.ReadOnly = true;
             LoadTotal();
+            DataGV();
+            total();
         }
         private void LoadTotal()
         {
@@ -60,6 +63,27 @@ namespace CourseWork_2018_2019_
                 tour[i] = splitTotal[4];
                 costOfTravel[i] = int.Parse(splitTotal[5]);
                 amountTours[i] = int.Parse(splitTotal[6]);
+            }
+        }
+        private void DataGV()
+        {
+            dataGridView2.Rows.Clear();
+            for (int i = 0; i < travels; i++)
+            {
+                dataGridView2.Rows.Add(kodTravel[i], kClient[i], fio[i],kTour[i],tour[i],costOfTravel[i],amountTours[i]);
+            }
+        }
+        private void total()//Подсчет итоговой суммы
+        {
+            int cost = 0;
+            int amount = 0;
+            string total = "";
+            for (int i = 0; i < travels; i++)
+            {
+                cost = int.Parse(dataGridView2.Rows[i].Cells[5].Value.ToString());
+                amount = int.Parse(dataGridView2.Rows[i].Cells[6].Value.ToString());
+                total = (cost * amount).ToString();
+                dataGridView2.Rows[i].Cells[7].Value = total;
             }
         }
     }
