@@ -70,17 +70,24 @@ namespace CourseWork_2018_2019_
         {
              try
              {
-                 newStr = dataGridView2.CurrentRow.Index;
-                 string indexStr = (newStr + 1).ToString();
-                 int id = newStr + 1;
-                // dataGridView2.Rows[newStr].Cells[0].Value = indexStr;
-                 //textBox1.Text = dataGridView2.Rows[newStr].Cells[0].Value.ToString();
+                newStr = dataGridView2.CurrentRow.Index;
+                
+                int numOfCl = int.Parse(dataGridView2.Rows[newStr].Cells[1].Value.ToString());
+                string kodCl = kClient[numOfCl-1];
+                int index = Array.IndexOf(kClient,kodCl);
+                comboBox1.SelectedIndex = index;
+                int numOfTour = int.Parse(dataGridView2.Rows[newStr].Cells[3].Value.ToString());
+                string kodT = kTour[numOfTour-1];
+                int ind = Array.IndexOf(kTour, kodT);
+                comboBox2.SelectedIndex = ind;
+                textBox1.Text = dataGridView2.Rows[newStr].Cells[0].Value.ToString();
+              // dataGridView2.Rows[newStr].Cells[0].Value = indexStr;
                 //comboBox1.SelectedIndex = int.Parse(kClient[]);
                 //string[] v = new string[5];
               // string v = kClient[id];
-                //comboBox1.SelectedIndex = int.Parse(v);//comboBox2.Text = dataGridView2.Rows[newStr].Cells[3].Value.ToString();
-                //textBox2.Text = dataGridView2.Rows[newStr].Cells[5].Value.ToString();
-                // textBox3.Text = dataGridView2.Rows[newStr].Cells[6].Value.ToString();
+               
+                textBox2.Text = dataGridView2.Rows[newStr].Cells[5].Value.ToString();
+                textBox3.Text = dataGridView2.Rows[newStr].Cells[6].Value.ToString();
              }
              catch { }
         }
@@ -130,13 +137,11 @@ namespace CourseWork_2018_2019_
             dataGridView2.Rows[newStr].Cells[6].Value = textBox3.Text;
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e) //сохранить
         {
             string[] saveTravel = new string[amountOfRows];
-            //string[] saveOutClient = new string[amountOfRows];
             for (int i = 0; i < amountOfRows; i++)
             {
-                //saveOutClient[1] += dataGridView1.Rows[i].Cells[0].Value + "#" +"\n"; File.WriteAllLines("travel.txt", saveOutClient, Encoding.GetEncoding(1251));
                 for (int j = 0; j < 7; j++)
                 {
                     saveTravel[i] += dataGridView2.Rows[i].Cells[j].Value + "#"; File.WriteAllLines("travel.txt", saveTravel, Encoding.GetEncoding(1251));
