@@ -18,6 +18,8 @@ namespace CourseWork_2018_2019_
         char[] d = { '#' };
         int kC = 0;
         int newStr = 0;
+        int indexStr = 0;
+        int amountOfRows = 0;
         public Form2()
         {
             InitializeComponent();
@@ -43,7 +45,7 @@ namespace CourseWork_2018_2019_
         private void DataGV()
         {
             dataGridView1.Rows.Clear();
-            for(int i=0; i < kC;i++)
+            for (int i=0; i < kC;i++)
             {
                 dataGridView1.Rows.Add(kodClient[i], fio[i]);
             }
@@ -58,7 +60,7 @@ namespace CourseWork_2018_2019_
             try
             {
                 newStr = dataGridView1.CurrentRow.Index;
-                string indexStr = (newStr + 1).ToString();
+                indexStr = newStr + 1;
                 dataGridView1.Rows[newStr].Cells[0].Value = indexStr;
                 textBox1.Text = dataGridView1.Rows[newStr].Cells[0].Value.ToString();
                 textBox2.Text = dataGridView1.Rows[newStr].Cells[1].Value.ToString();
@@ -67,8 +69,7 @@ namespace CourseWork_2018_2019_
 		}
 		private void button1_Click(object sender, EventArgs e) //Изменить
         {
-            fio[newStr] = textBox2.Text;
-            DataGV();
+            dataGridView1.Rows[newStr].Cells[1].Value = textBox2.Text;
         }
 
         private void button2_Click(object sender, EventArgs e) //Добавить

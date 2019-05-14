@@ -39,5 +39,11 @@ namespace CourseWork_2018_2019_
             Form form5 = new Form5();
             form5.ShowDialog();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form form6 = new Form5();
+            form6.ShowDialog();
+        }
     }
 }

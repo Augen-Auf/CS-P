@@ -74,11 +74,9 @@ namespace CourseWork_2018_2019_
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-
-			tour[newStr] = textBox2.Text;
-			days[newStr] = int.Parse(textBox3.Text);
-			DataGV();
-		}
+            dataGridView1.Rows[newStr].Cells[1].Value = textBox2.Text;
+            dataGridView1.Rows[newStr].Cells[2].Value = textBox3.Text;
+        }
 
 		private void button2_Click(object sender, EventArgs e)
 		{

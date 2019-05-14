@@ -115,6 +115,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(100, 305);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(66, 20);
             this.textBox1.TabIndex = 9;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -216,7 +217,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView2);
             this.Name = "Form4";
-            this.Text = "Form4";
+            this.Text = "ПУТЁВКИ";
             this.Load += new System.EventHandler(this.Form4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
