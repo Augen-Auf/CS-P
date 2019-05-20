@@ -26,11 +26,6 @@ namespace CourseWork_2018_2019_
         public Form5()
         {
             InitializeComponent();
-            dataGridView2.Columns[0].Width = 45;
-            dataGridView2.Columns[1].Width = 45;
-            dataGridView2.Columns[2].Width = 100;
-            dataGridView2.Columns[3].Width = 45;
-            dataGridView2.Columns[4].Width = 150;
         }
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -38,6 +33,7 @@ namespace CourseWork_2018_2019_
         private void Form5_Load(object sender, EventArgs e)
         {
             dataGridView2.ReadOnly = true;
+            dataGridView2.AutoResizeColumns();
             LoadTotal();
             DataGV();
             total();

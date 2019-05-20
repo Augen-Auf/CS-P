@@ -42,7 +42,7 @@ namespace CourseWork_2018_2019_
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Form form6 = new Form5();
+            Form form6 = new Form6();
             form6.ShowDialog();
         }
     }

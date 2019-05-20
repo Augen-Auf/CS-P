@@ -85,7 +85,6 @@ namespace CourseWork_2018_2019_
              try
              {
                 newStr = dataGridView2.CurrentRow.Index;
-                
                 int numOfCl = int.Parse(dataGridView2.Rows[newStr].Cells[1].Value.ToString());
                 string kodCl = kClient[numOfCl-1];
                 int index = Array.IndexOf(kClient,kodCl);
@@ -148,8 +147,9 @@ namespace CourseWork_2018_2019_
 
         private void button4_Click(object sender, EventArgs e) //сохранить
         {
-            string[] saveTravel = new string[amountOfRows];
-            for (int i = 0; i < amountOfRows; i++)
+            int countStr = dataGridView2.Rows.Count;
+            string[] saveTravel = new string[countStr];
+            for (int i = 0; i < countStr; i++)
             {
                 for (int j = 0; j < 7; j++)
                 {
