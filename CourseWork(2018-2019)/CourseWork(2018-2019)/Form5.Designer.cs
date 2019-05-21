@@ -30,14 +30,11 @@
         {
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,9 +44,6 @@
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.Column1,
             this.dataGridViewTextBoxColumn3,
             this.Column2,
             this.dataGridViewTextBoxColumn4,
@@ -70,54 +64,36 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Таблица итогов";
             // 
-            // Column4
-            // 
-            this.Column4.FillWeight = 100.3864F;
-            this.Column4.HeaderText = "Стоимость всей поездки (руб.)";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.FillWeight = 141.4519F;
-            this.Column3.HeaderText = "Количество путевок(приобретено за раз)";
-            this.Column3.Name = "Column3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.FillWeight = 115.4832F;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Стоимость поездки (за 1 чел. в руб.)";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // Column2
-            // 
-            this.Column2.FillWeight = 81.21827F;
-            this.Column2.HeaderText = "Тур";
-            this.Column2.Name = "Column2";
-            // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.FillWeight = 96.70654F;
+            this.dataGridViewTextBoxColumn3.FillWeight = 27.16986F;
             this.dataGridViewTextBoxColumn3.HeaderText = "Код тура вн. ключ";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
-            // Column1
+            // Column2
             // 
-            this.Column1.FillWeight = 96.70654F;
-            this.Column1.HeaderText = "Фамилия";
-            this.Column1.Name = "Column1";
+            this.Column2.FillWeight = 275.3813F;
+            this.Column2.HeaderText = "Тур";
+            this.Column2.Name = "Column2";
             // 
-            // dataGridViewTextBoxColumn2
+            // dataGridViewTextBoxColumn4
             // 
-            this.dataGridViewTextBoxColumn2.FillWeight = 96.70654F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Код клиента вн. ключ";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn4.FillWeight = 75.20506F;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Количество заказов";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
-            // dataGridViewTextBoxColumn1
+            // Column3
             // 
-            this.dataGridViewTextBoxColumn1.FillWeight = 71.3406F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Код поездки";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.Column3.FillWeight = 92.11642F;
+            this.Column3.HeaderText = "Количество проданных путевок";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.FillWeight = 65.37371F;
+            this.Column4.HeaderText = "Прибыль (руб.)";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // Form5
             // 
@@ -139,9 +115,6 @@
 
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;

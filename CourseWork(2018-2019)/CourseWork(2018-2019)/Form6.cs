@@ -104,14 +104,23 @@ namespace CourseWork_2018_2019_
         {
             int amountOfTours = 0;
             int amountOfTickets = 0;
+            int total = 0;
             for (int i = 0; i < dataGridView2.Rows.Count; i++)
             { 
                 int amountOfTicket = int.Parse(dataGridView2.Rows[i].Cells[3].Value.ToString());
+                int price = int.Parse(dataGridView2.Rows[i].Cells[4].Value.ToString());
                 amountOfTickets += amountOfTicket;
+                total = price * amountOfTickets;
             }
             amountOfTours = dataGridView2.Rows.Count;
             textBox1.Text = amountOfTours.ToString();
             textBox2.Text = amountOfTickets.ToString();
+            textBox3.Text = total.ToString();
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

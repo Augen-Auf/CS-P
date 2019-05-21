@@ -15,7 +15,7 @@ namespace CourseWork_2018_2019_
 	{
 		int[] kodTour = new int[0];
 		string[] tour = new string[0];
-		int[] days = new int[0];
+		int[] cost = new int[0];
 		char[] d = { '#' };
 		int kT = 0;
 		int newStr = 0;
@@ -40,13 +40,13 @@ namespace CourseWork_2018_2019_
 			kT = typeOfTour.Length;
 			Array.Resize(ref kodTour, kT);
 			Array.Resize(ref tour, kT);
-			Array.Resize(ref days, kT);
+			Array.Resize(ref cost, kT);
 			for (int i = 0; i < kT; i++)
 			{
 				string[] splitTour = typeOfTour[i].Split(d, StringSplitOptions.RemoveEmptyEntries);
 				kodTour[i] = int.Parse(splitTour[0]);
 				tour[i] = splitTour[1];
-				days[i] = int.Parse(splitTour[2]);
+				cost[i] = int.Parse(splitTour[2]);
 
 			}
 		}
@@ -55,7 +55,7 @@ namespace CourseWork_2018_2019_
 			dataGridView1.Rows.Clear();
 			for (int i = 0; i < kT; i++)
 			{
-				dataGridView1.Rows.Add(kodTour[i], tour[i],days[i]);
+				dataGridView1.Rows.Add(kodTour[i], tour[i], cost[i]);
 			}
 		}
 		private void dataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -94,6 +94,7 @@ namespace CourseWork_2018_2019_
             for (int i = 0; i < countStr; i++)
                 for (int j = 0; j < 3; j++)
                     saveTour[i] += dataGridView1.Rows[i].Cells[j].Value + "#"; File.WriteAllLines("tour.txt", saveTour, Encoding.GetEncoding(1251));
+            MessageBox.Show("Данные успешно сохранены!");
         }
 
         private void button4_Click(object sender, EventArgs e)

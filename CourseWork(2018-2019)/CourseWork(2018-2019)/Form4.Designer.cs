@@ -36,6 +36,7 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -61,10 +62,11 @@
             this.dataGridViewTextBoxColumn3,
             this.Column2,
             this.dataGridViewTextBoxColumn4,
-            this.Column3});
+            this.Column3,
+            this.Column4});
             this.dataGridView2.Location = new System.Drawing.Point(41, 28);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(566, 270);
+            this.dataGridView2.Size = new System.Drawing.Size(590, 270);
             this.dataGridView2.TabIndex = 4;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             this.dataGridView2.SelectionChanged += new System.EventHandler(this.dataGridView2_SelectionChanged);
@@ -111,6 +113,12 @@
             this.Column3.HeaderText = "Количество путевок(приобретено за раз)";
             this.Column3.Name = "Column3";
             // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Стоимость";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(84, 317);
@@ -146,11 +154,13 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(110, 21);
             this.comboBox2.TabIndex = 16;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(434, 318);
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(66, 20);
             this.textBox2.TabIndex = 17;
             // 
@@ -172,7 +182,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(654, 171);
+            this.button2.Location = new System.Drawing.Point(654, 233);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(84, 25);
             this.button2.TabIndex = 20;
@@ -182,7 +192,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(654, 202);
+            this.button3.Location = new System.Drawing.Point(654, 171);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(84, 25);
             this.button3.TabIndex = 21;
@@ -192,7 +202,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(654, 233);
+            this.button4.Location = new System.Drawing.Point(654, 202);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(84, 25);
             this.button4.TabIndex = 22;
@@ -245,5 +255,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

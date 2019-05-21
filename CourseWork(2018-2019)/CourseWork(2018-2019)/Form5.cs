@@ -14,15 +14,14 @@ namespace CourseWork_2018_2019_
     public partial class Form5 : Form
     {
         int[] kodTravel = new int[0];
-        int[] kClient = new int[0];
-        string[] fio = new string[0];
         int[] kTour = new int[0];
         string[] tour = new string[0];
-        string[] ktour = new string[0];
-        int[] costOfTravel = new int[0];
-        int[] amountTours = new int[0];
+        int[] order = new int[0];
+        int[] tickets = new int[0];
+        int[] profit = new int[0];
         char[] d = { '#' };
-        int travels = 0;
+        int allTours = 0;
+        int amountTours = 0;
         public Form5()
         {
             InitializeComponent();
@@ -36,50 +35,54 @@ namespace CourseWork_2018_2019_
             dataGridView2.AutoResizeColumns();
             LoadTotal();
             DataGV();
-            total();
         }
         private void LoadTotal()
         {
-            string[] total = File.ReadAllLines("travel.txt", Encoding.GetEncoding(1251));
-            travels = total.Length;
-            Array.Resize(ref kodTravel, travels);
-            Array.Resize(ref kClient, travels);
-            Array.Resize(ref fio, travels);
-            Array.Resize(ref kTour, travels);
-            Array.Resize(ref tour, travels);
-            Array.Resize(ref costOfTravel, travels);
-            Array.Resize(ref amountTours, travels);
-            for (int i = 0; i < travels; i++)
+            string[] tours = File.ReadAllLines("tour.txt", Encoding.GetEncoding(1251));
+            allTours = tours.Length;
+            Array.Resize(ref kodTravel, allTours);
+            Array.Resize(ref kTour, allTours);
+            Array.Resize(ref tour, allTours);
+            for (int i = 0; i < allTours; i++)
             {
-                string[] splitTotal = total[i].Split(d, StringSplitOptions.RemoveEmptyEntries);
-                kodTravel[i] = int.Parse(splitTotal[0]);
-                kClient[i] = int.Parse(splitTotal[1]);
-                fio[i] = splitTotal[2];
-                kTour[i] = int.Parse(splitTotal[3]);
-                tour[i] = splitTotal[4];
-                costOfTravel[i] = int.Parse(splitTotal[5]);
-                amountTours[i] = int.Parse(splitTotal[6]);
+                string[] splitTours = tours[i].Split(d, StringSplitOptions.RemoveEmptyEntries);
+                kTour[i] = int.Parse(splitTours[0]);
+                tour[i] = splitTours[1];
             }
+            string[] amount = File.ReadAllLines("travel.txt", Encoding.GetEncoding(1251));
+            amountTours = amount.Length;
+            Array.Resize(ref order, amountTours);
+            Array.Resize(ref tickets, amountTours);
+            Array.Resize(ref profit, amountTours);
+            for (int i = 0; i < amountTours; i++)
+            {
+                string[] splitAmount = amount[i].Split(d, StringSplitOptions.RemoveEmptyEntries);
+                order[i] = int.Parse(splitAmount[3]);
+                tickets[i] = int.Parse(splitAmount[6]);
+                profit[i] = int.Parse(splitAmount[7]);
+            }  
         }
         private void DataGV()
         {
             dataGridView2.Rows.Clear();
-            for (int i = 0; i < travels; i++)
+            for (int i = 0; i < allTours; i++)
             {
-                dataGridView2.Rows.Add(kodTravel[i], kClient[i], fio[i],kTour[i],tour[i],costOfTravel[i],amountTours[i]);
-            }
-        }
-        private void total()//Подсчет итоговой суммы
-        {
-            int cost = 0;
-            int amount = 0;
-            string total = "";
-            for (int i = 0; i < travels; i++)
-            {
-                cost = int.Parse(dataGridView2.Rows[i].Cells[5].Value.ToString());
-                amount = int.Parse(dataGridView2.Rows[i].Cells[6].Value.ToString());
-                total = (cost * amount).ToString();
-                dataGridView2.Rows[i].Cells[7].Value = total;
+                int counter = 0;
+                int amountTickets = 0;
+                int sum = 0;
+                dataGridView2.Rows.Add(kTour[i],tour[i]);
+                for (int k = 0; k < amountTours; k++)
+                {
+                    if (dataGridView2.Rows[i].Cells[0].Value.ToString() == order[k].ToString())
+                    {
+                        counter++;
+                        amountTickets += tickets[k];
+                        sum += profit[k];
+                    } 
+                    dataGridView2.Rows[i].Cells[2].Value = counter;
+                    dataGridView2.Rows[i].Cells[3].Value = amountTickets;
+                    dataGridView2.Rows[i].Cells[4].Value = sum;
+                }
             }
         }
     }

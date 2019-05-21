@@ -93,6 +93,7 @@ namespace CourseWork_2018_2019_
                     saveClient[i] += dataGridView1.Rows[i].Cells[j].Value + "#"; File.WriteAllLines("client.txt", saveClient, Encoding.GetEncoding(1251));
                 }
             }
+            MessageBox.Show("Данные успешно сохранены!");
         }
         private void button4_Click(object sender, EventArgs e) //Удалить
         {
