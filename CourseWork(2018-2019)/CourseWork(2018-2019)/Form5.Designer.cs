@@ -85,7 +85,7 @@
             // Column3
             // 
             this.Column3.FillWeight = 92.11642F;
-            this.Column3.HeaderText = "Количество проданных путевок";
+            this.Column3.HeaderText = "Количество проданных билетов";
             this.Column3.Name = "Column3";
             // 
             // Column4

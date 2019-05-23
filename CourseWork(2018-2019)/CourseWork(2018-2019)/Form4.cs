@@ -24,8 +24,8 @@ namespace CourseWork_2018_2019_
         string[] typeOfTour = new string[0];
         string[] newtypeOfTour = new string[0];
         char[] d = { '#' };
-        int amountOfRows1 = 0;
-        int amountOfRows2 = 0;
+        int amount1 = 0;
+        int amount2 = 0;
         int newTravel = 1;
         int newStr = 0;
         int amountMainRows = 0;
@@ -53,73 +53,63 @@ namespace CourseWork_2018_2019_
             string[] tour = File.ReadAllLines("tour.txt", Encoding.GetEncoding(1251));
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
-            amountOfRows1 = client.Length;
-            amountOfRows2 = tour.Length;
-            Array.Resize(ref kClient, amountOfRows1);
-            Array.Resize(ref newkClient, amountOfRows1);
-            Array.Resize(ref fio, amountOfRows1);
-            Array.Resize(ref newfio, amountOfRows1);
-            Array.Resize(ref kTour, amountOfRows2);
-            Array.Resize(ref newkTour, amountOfRows2);
-            Array.Resize(ref typeOfTour, amountOfRows2);
-            Array.Resize(ref newtypeOfTour, amountOfRows2);
-            Array.Resize(ref costOfTour, amountOfRows2);
-            Array.Resize(ref newcostOfTour, amountOfRows2);
+            amount1 = client.Length;
+            amount2 = tour.Length;
+            Array.Resize(ref kClient, amount1);
+            Array.Resize(ref fio, amount1);
+            Array.Resize(ref kTour, amount2);
+            Array.Resize(ref typeOfTour, amount2);
+            Array.Resize(ref costOfTour, amount2);
+            Array.Resize(ref newcostOfTour, amount2);
             textBox1.Text = newTravel.ToString();
-            for (int i = 0; i < amountOfRows1; i++)
+            for (int i = 0; i < amount1; i++)
             {
                 string[] kodeCl = client[i].Split(d, StringSplitOptions.RemoveEmptyEntries);
                 kClient[i] = kodeCl[0];
-                newkClient[i] = kodeCl[0];
                 fio[i] = kodeCl[1];
-                newfio[i] = kodeCl[1];
                 comboBox1.Items.Add(kClient[i] + " " + fio[i]);
             }
-            for (int i = 0; i < amountOfRows2; i++)
+            for (int i = 0; i < amount2; i++)
             {
                 string[] kodeTour = tour[i].Split(d, StringSplitOptions.RemoveEmptyEntries);
                 kTour[i] = kodeTour[0];
-                newkTour[i] = kodeTour[0];
                 typeOfTour[i] = kodeTour[1];
-                newtypeOfTour[i] = kodeTour[1];
                 costOfTour[i] = int.Parse(kodeTour[2]);
-                newcostOfTour[i] = int.Parse(kodeTour[2]);
                 comboBox2.Items.Add(kTour[i] + " " + typeOfTour[i]);
             }
-        }
-        private void DataGV()
-        {
-
-            dataGridView2.Rows.Clear();
             string[] travel = File.ReadAllLines("travel.txt", Encoding.GetEncoding(1251));
             amountMainRows = travel.Length;
             Array.Resize(ref kodeTravel, amountMainRows);
             Array.Resize(ref amountTour, amountMainRows);
+            Array.Resize(ref newkTour, amountMainRows);
+            Array.Resize(ref newkClient, amountMainRows);
             Array.Resize(ref newcostOfTour, amountMainRows);
-            if (amountOfRows1 > amountOfRows2)
+            dataGridView2.Rows.Clear();
+            if (amount1 > amount2)
             {
-                Array.Resize(ref newkTour, amountOfRows1);
-                Array.Resize(ref newtypeOfTour, amountOfRows1);
+                Array.Resize(ref newkTour, amount1);
+                Array.Resize(ref typeOfTour, amount1);
             }
-            if (amountOfRows1 < amountOfRows2)
+            if (amount1 < amount2)
             {
-                Array.Resize(ref newkClient, amountOfRows2);
-                Array.Resize(ref newfio, amountOfRows2);
+                Array.Resize(ref newkClient, amount2);
+                Array.Resize(ref fio, amount2);
             }
             for (int i = 0; i < amountMainRows; i++)
             {
                 string[] values = travel[i].Split(d, StringSplitOptions.RemoveEmptyEntries);
-                amountTour[i] = int.Parse(values[6]);
+                amountTour[i] = int.Parse(values[4]);
                 kodeTravel[i] = int.Parse(values[0]);
                 newkClient[i] = values[1];
-                newfio[i] = values[2];
-                newkTour[i] = values[3];
-                newtypeOfTour[i] = values[4];
-                newcostOfTour[i] = int.Parse(values[5]);
+                newkTour[i] = values[2];
+                newcostOfTour[i] = int.Parse(values[3]);
             }
+        }
+        private void DataGV()
+        {
             for (int i = 0; i < amountMainRows; i++)
             {
-                dataGridView2.Rows.Add(kodeTravel[i], newkClient[i], newfio[i], newkTour[i], newtypeOfTour[i], newcostOfTour[i],amountTour[i]);
+                dataGridView2.Rows.Add(kodeTravel[i], newkClient[i], newkTour[i], newcostOfTour[i],amountTour[i]);
             }
         }
         private void dataGridView2_SelectionChanged(object sender, EventArgs e)
@@ -131,7 +121,8 @@ namespace CourseWork_2018_2019_
                 string kodCl = kClient[numOfCl - 1];
                 int index = Array.IndexOf(kClient, kodCl);
                 comboBox1.SelectedIndex = index;
-                int numOfTour = int.Parse(dataGridView2.Rows[newStr].Cells[3].Value.ToString());
+
+                int numOfTour = int.Parse(dataGridView2.Rows[newStr].Cells[2].Value.ToString());
                 string kodT = kTour[numOfTour - 1];
                 int ind = Array.IndexOf(kTour, kodT);
                 comboBox2.SelectedIndex = ind;
@@ -155,8 +146,8 @@ namespace CourseWork_2018_2019_
                 cost = int.Parse(textBox2.Text);
                 amount = int.Parse(textBox3.Text);
                 total = (cost * amount).ToString();
-                dataGridView2.Rows.Add(newTravel, kClient[selIndexCl], fio[selIndexCl],
-                kTour[selIndexTour], typeOfTour[selIndexTour], textBox2.Text, textBox3.Text,total);
+                dataGridView2.Rows.Add(newTravel, kClient[selIndexCl],
+                kTour[selIndexTour], textBox2.Text, textBox3.Text,total);
             }
             else
             {
@@ -182,7 +173,7 @@ namespace CourseWork_2018_2019_
             string[] saveTravel = new string[countStr];
             for (int i = 0; i < countStr; i++)
             {
-                for (int j = 0; j < 8; j++)
+                for (int j = 0; j < 6; j++)
                 {
                     saveTravel[i] += dataGridView2.Rows[i].Cells[j].Value + "#"; File.WriteAllLines("travel.txt", saveTravel, Encoding.GetEncoding(1251));
                 }
@@ -196,10 +187,10 @@ namespace CourseWork_2018_2019_
             string total = "";
             for (int i = 0; i < amountMainRows; i++)
             {
-                cost = int.Parse(dataGridView2.Rows[i].Cells[5].Value.ToString());
-                amount = int.Parse(dataGridView2.Rows[i].Cells[6].Value.ToString());
+                cost = int.Parse(dataGridView2.Rows[i].Cells[3].Value.ToString());
+                amount = int.Parse(dataGridView2.Rows[i].Cells[4].Value.ToString());
                 total = (cost * amount).ToString();
-                dataGridView2.Rows[i].Cells[7].Value = total;
+                dataGridView2.Rows[i].Cells[5].Value = total;
             }
         }
         private void textBox1_TextChanged(object sender, EventArgs e)

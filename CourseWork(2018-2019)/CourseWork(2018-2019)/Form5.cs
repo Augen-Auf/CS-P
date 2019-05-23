@@ -57,9 +57,9 @@ namespace CourseWork_2018_2019_
             for (int i = 0; i < amountTours; i++)
             {
                 string[] splitAmount = amount[i].Split(d, StringSplitOptions.RemoveEmptyEntries);
-                order[i] = int.Parse(splitAmount[3]);
-                tickets[i] = int.Parse(splitAmount[6]);
-                profit[i] = int.Parse(splitAmount[7]);
+                order[i] = int.Parse(splitAmount[2]);
+                tickets[i] = int.Parse(splitAmount[4]);
+                profit[i] = int.Parse(splitAmount[3]);
             }  
         }
         private void DataGV()
@@ -77,7 +77,7 @@ namespace CourseWork_2018_2019_
                     {
                         counter++;
                         amountTickets += tickets[k];
-                        sum += profit[k];
+                        sum = profit[k]*amountTickets;
                     } 
                     dataGridView2.Rows[i].Cells[2].Value = counter;
                     dataGridView2.Rows[i].Cells[3].Value = amountTickets;
