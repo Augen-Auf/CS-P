@@ -99,9 +99,10 @@ namespace CourseWork_2018_2019_
 
         private void button4_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            dataGridView1.Rows.RemoveAt(newStr);
+            for (int n = newStr; n < dataGridView1.RowCount; n++)
             {
-                dataGridView1.Rows.Remove(row);
+                dataGridView1.Rows[n].Cells[0].Value = n + 1;
             }
         }
     }

@@ -19,7 +19,6 @@ namespace CourseWork_2018_2019_
         int kC = 0;
         int newStr = 0;
         int indexStr = 0;
-        int amountOfRows = 0;
         public Form2()
         {
             InitializeComponent();
@@ -87,7 +86,6 @@ namespace CourseWork_2018_2019_
             string[] saveOutClient = new string[countStr];
             for (int i = 0; i < countStr; i++)
             {
-                //saveOutClient[1] += dataGridView1.Rows[i].Cells[0].Value + "#" +"\n"; File.WriteAllLines("travel.txt", saveOutClient, Encoding.GetEncoding(1251));
                 for (int j = 0; j < 2; j++)
                 {
                     saveClient[i] += dataGridView1.Rows[i].Cells[j].Value + "#"; File.WriteAllLines("client.txt", saveClient, Encoding.GetEncoding(1251));
@@ -97,9 +95,10 @@ namespace CourseWork_2018_2019_
         }
         private void button4_Click(object sender, EventArgs e) //Удалить
         {
-            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            dataGridView1.Rows.RemoveAt(newStr);
+            for (int n=newStr;n<dataGridView1.RowCount;n++)
             {
-                dataGridView1.Rows.Remove(row);
+                dataGridView1.Rows[n].Cells[0].Value = n + 1;
             }
         }
     }

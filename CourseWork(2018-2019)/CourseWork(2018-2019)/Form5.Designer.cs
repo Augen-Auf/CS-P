@@ -53,7 +53,6 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(643, 270);
             this.dataGridView2.TabIndex = 5;
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // label1
             // 
@@ -66,31 +65,31 @@
             // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.FillWeight = 27.16986F;
+            this.dataGridViewTextBoxColumn3.FillWeight = 87.85838F;
             this.dataGridViewTextBoxColumn3.HeaderText = "Код тура вн. ключ";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // Column2
             // 
-            this.Column2.FillWeight = 275.3813F;
+            this.Column2.FillWeight = 108.6795F;
             this.Column2.HeaderText = "Тур";
             this.Column2.Name = "Column2";
             // 
             // dataGridViewTextBoxColumn4
             // 
-            this.dataGridViewTextBoxColumn4.FillWeight = 75.20506F;
+            this.dataGridViewTextBoxColumn4.FillWeight = 109.4676F;
             this.dataGridViewTextBoxColumn4.HeaderText = "Количество заказов";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // Column3
             // 
-            this.Column3.FillWeight = 92.11642F;
+            this.Column3.FillWeight = 134.0836F;
             this.Column3.HeaderText = "Количество проданных билетов";
             this.Column3.Name = "Column3";
             // 
             // Column4
             // 
-            this.Column4.FillWeight = 65.37371F;
+            this.Column4.FillWeight = 95.15724F;
             this.Column4.HeaderText = "Прибыль (руб.)";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;

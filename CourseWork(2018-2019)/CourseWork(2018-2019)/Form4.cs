@@ -26,7 +26,6 @@ namespace CourseWork_2018_2019_
         char[] d = { '#' };
         int amount1 = 0;
         int amount2 = 0;
-        int newTravel = 1;
         int newStr = 0;
         int amountMainRows = 0;
         string[] fio = new string[0];
@@ -35,12 +34,6 @@ namespace CourseWork_2018_2019_
         {
             InitializeComponent();
         }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void Form4_Load(object sender, EventArgs e)
         {
             LoadTravel();
@@ -61,7 +54,6 @@ namespace CourseWork_2018_2019_
             Array.Resize(ref typeOfTour, amount2);
             Array.Resize(ref costOfTour, amount2);
             Array.Resize(ref newcostOfTour, amount2);
-            textBox1.Text = newTravel.ToString();
             for (int i = 0; i < amount1; i++)
             {
                 string[] kodeCl = client[i].Split(d, StringSplitOptions.RemoveEmptyEntries);
@@ -121,7 +113,6 @@ namespace CourseWork_2018_2019_
                 string kodCl = kClient[numOfCl - 1];
                 int index = Array.IndexOf(kClient, kodCl);
                 comboBox1.SelectedIndex = index;
-
                 int numOfTour = int.Parse(dataGridView2.Rows[newStr].Cells[2].Value.ToString());
                 string kodT = kTour[numOfTour - 1];
                 int ind = Array.IndexOf(kTour, kodT);
@@ -157,14 +148,24 @@ namespace CourseWork_2018_2019_
         private void button2_Click(object sender, EventArgs e)//удалить
         {
             dataGridView2.Rows.RemoveAt(newStr);
-            newTravel--;
-            textBox1.Text = newTravel.ToString();
+            int indexStr = newStr + 1;
+            textBox1.Text = indexStr.ToString();
+            for (int n = newStr; n < dataGridView2.RowCount; n++)
+            {
+                dataGridView2.Rows[n].Cells[0].Value = n + 1;
+            }
         }
 
         private void button3_Click(object sender, EventArgs e) //изменить
         {
-            dataGridView2.Rows[newStr].Cells[5].Value = textBox2.Text;
-            dataGridView2.Rows[newStr].Cells[6].Value = textBox3.Text;
+            int selIndexCl = comboBox1.SelectedIndex;
+            int selIndexTour = comboBox2.SelectedIndex;
+            dataGridView2.Rows[newStr].Cells[4].Value = textBox3.Text;
+            dataGridView2.Rows[newStr].Cells[2].Value = kTour[selIndexTour];
+            dataGridView2.Rows[newStr].Cells[1].Value = kClient[selIndexCl];
+            dataGridView2.Rows[newStr].Cells[3].Value = textBox2.Text;
+            int profit = int.Parse(textBox2.Text) * int.Parse(textBox3.Text);
+            dataGridView2.Rows[newStr].Cells[5].Value = profit;
         }
 
         private void button4_Click(object sender, EventArgs e) //сохранить
@@ -193,21 +194,6 @@ namespace CourseWork_2018_2019_
                 dataGridView2.Rows[i].Cells[5].Value = total;
             }
         }
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = comboBox2.SelectedIndex;

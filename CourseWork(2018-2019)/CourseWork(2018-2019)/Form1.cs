@@ -13,7 +13,6 @@ namespace CourseWork_2018_2019_
 {
     public partial class Form1 : Form
     {
-        
         public Form1()
         {
             InitializeComponent();
@@ -33,13 +32,11 @@ namespace CourseWork_2018_2019_
             Form form4 = new Form4();
             form4.ShowDialog();
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             Form form5 = new Form5();
             form5.ShowDialog();
         }
-
         private void button4_Click(object sender, EventArgs e)
         {
             Form form6 = new Form6();

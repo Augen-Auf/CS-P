@@ -30,17 +30,6 @@ namespace CourseWork_2018_2019_
         {
             InitializeComponent();
         }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void Form6_Load(object sender, EventArgs e)
         {
             LoadMainForm();
@@ -133,11 +122,6 @@ namespace CourseWork_2018_2019_
             textBox1.Text = amountOfTours.ToString();
             textBox2.Text = amountOfTickets.ToString();
             textBox3.Text = total.ToString();
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

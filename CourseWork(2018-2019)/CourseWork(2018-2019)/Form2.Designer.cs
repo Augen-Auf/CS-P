@@ -69,6 +69,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(40, 266);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;

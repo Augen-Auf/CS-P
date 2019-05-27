@@ -26,13 +26,9 @@ namespace CourseWork_2018_2019_
         {
             InitializeComponent();
         }
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
         private void Form5_Load(object sender, EventArgs e)
         {
             dataGridView2.ReadOnly = true;
-            dataGridView2.AutoResizeColumns();
             LoadTotal();
             DataGV();
         }
