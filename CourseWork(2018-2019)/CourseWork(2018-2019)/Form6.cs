@@ -75,9 +75,9 @@ namespace CourseWork_2018_2019_
             for (int i = 0; i < amountOfRows2; i++)
             {
                 string[] addTravel = travels[i].Split(d, StringSplitOptions.RemoveEmptyEntries);
-                kTour[i] = int.Parse(addTravel[2]);
-                amountOfTravel[i] = int.Parse(addTravel[4]);
-                cost[i] = int.Parse(addTravel[3]);
+                kTour[i] = int.Parse(addTravel[3]);
+                amountOfTravel[i] = int.Parse(addTravel[6]);
+                cost[i] = int.Parse(addTravel[5]);
                 kCl[i] = int.Parse(addTravel[1]);
             }
             try
@@ -99,7 +99,8 @@ namespace CourseWork_2018_2019_
                         int amountT = amountOfTravel[i];
                         int price = cost[i];
                         int newTravelKode = dataGridView2.RowCount + 1;
-                        dataGridView2.Rows.Add(newTravelKode, kodTour,nameTour, amountT, price);
+                        int fullPrice = price * amountT;
+                        dataGridView2.Rows.Add(newTravelKode, kodTour,nameTour, amountT, price, fullPrice);
                     } 
                 }
                 Amount();

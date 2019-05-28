@@ -31,7 +31,9 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,13 +58,15 @@
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
+            this.Column1,
             this.dataGridViewTextBoxColumn3,
+            this.Column2,
             this.dataGridViewTextBoxColumn4,
             this.Column3,
             this.Column4});
             this.dataGridView2.Location = new System.Drawing.Point(41, 28);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(590, 270);
+            this.dataGridView2.Size = new System.Drawing.Size(626, 270);
             this.dataGridView2.TabIndex = 4;
             this.dataGridView2.SelectionChanged += new System.EventHandler(this.dataGridView2_SelectionChanged);
             // 
@@ -78,11 +82,23 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "Код клиента вн. ключ";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Фамилия";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.FillWeight = 96.33428F;
             this.dataGridViewTextBoxColumn3.HeaderText = "Код тура вн. ключ";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Тур";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -105,7 +121,7 @@
             // textBox1
             // 
             this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(65, 317);
+            this.textBox1.Location = new System.Drawing.Point(95, 315);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(66, 20);
@@ -113,7 +129,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(655, 179);
+            this.button1.Location = new System.Drawing.Point(684, 182);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(84, 25);
             this.button1.TabIndex = 14;
@@ -124,7 +140,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(146, 315);
+            this.comboBox1.Location = new System.Drawing.Point(178, 314);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(112, 21);
             this.comboBox1.TabIndex = 15;
@@ -132,7 +148,7 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(274, 315);
+            this.comboBox2.Location = new System.Drawing.Point(317, 314);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(110, 21);
             this.comboBox2.TabIndex = 16;
@@ -141,7 +157,7 @@
             // textBox2
             // 
             this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(400, 317);
+            this.textBox2.Location = new System.Drawing.Point(445, 315);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(66, 20);
@@ -149,7 +165,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(481, 317);
+            this.textBox3.Location = new System.Drawing.Point(526, 315);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(66, 20);
             this.textBox3.TabIndex = 18;
@@ -165,7 +181,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(655, 272);
+            this.button2.Location = new System.Drawing.Point(684, 275);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(84, 25);
             this.button2.TabIndex = 20;
@@ -175,7 +191,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(655, 210);
+            this.button3.Location = new System.Drawing.Point(684, 213);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(84, 25);
             this.button3.TabIndex = 21;
@@ -185,7 +201,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(655, 241);
+            this.button4.Location = new System.Drawing.Point(684, 244);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(84, 25);
             this.button4.TabIndex = 22;
@@ -210,7 +226,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView2);
             this.Name = "Form4";
-            this.Text = "ПУТЁВКИ";
+            this.Text = "Путёвки";
             this.Load += new System.EventHandler(this.Form4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
@@ -233,7 +249,9 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;

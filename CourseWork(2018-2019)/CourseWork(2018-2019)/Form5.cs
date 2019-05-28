@@ -53,19 +53,23 @@ namespace CourseWork_2018_2019_
             for (int i = 0; i < amountTours; i++)
             {
                 string[] splitAmount = amount[i].Split(d, StringSplitOptions.RemoveEmptyEntries);
-                order[i] = int.Parse(splitAmount[2]);
-                tickets[i] = int.Parse(splitAmount[4]);
-                profit[i] = int.Parse(splitAmount[3]);
+                order[i] = int.Parse(splitAmount[3]);
+                tickets[i] = int.Parse(splitAmount[6]);
+                profit[i] = int.Parse(splitAmount[5]);
             }  
         }
         private void DataGV()
         {
             dataGridView2.Rows.Clear();
+            int totalCount = 0;
+            int totalTickets = 0;
+            int totalSum = 0;
             for (int i = 0; i < allTours; i++)
             {
                 int counter = 0;
                 int amountTickets = 0;
                 int sum = 0;
+                
                 dataGridView2.Rows.Add(kTour[i],tour[i]);
                 for (int k = 0; k < amountTours; k++)
                 {
@@ -79,7 +83,18 @@ namespace CourseWork_2018_2019_
                     dataGridView2.Rows[i].Cells[3].Value = amountTickets;
                     dataGridView2.Rows[i].Cells[4].Value = sum;
                 }
+                totalCount += Convert.ToInt32(dataGridView2.Rows[i].Cells[2].Value.ToString());
+                totalTickets += Convert.ToInt32(dataGridView2.Rows[i].Cells[3].Value.ToString());
+                totalSum += Convert.ToInt32(dataGridView2.Rows[i].Cells[4].Value.ToString());
             }
+            textBox1.Text = totalCount.ToString();
+            textBox2.Text = totalTickets.ToString();
+            textBox3.Text = totalSum.ToString();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

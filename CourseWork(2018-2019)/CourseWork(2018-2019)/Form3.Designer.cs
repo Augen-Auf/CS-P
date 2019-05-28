@@ -73,7 +73,7 @@
             // Column3
             // 
             this.Column3.FillWeight = 68.03577F;
-            this.Column3.HeaderText = "Стоимость тура (на 1 чел)";
+            this.Column3.HeaderText = "Стоимость тура (за 1 чел.)";
             this.Column3.Name = "Column3";
             // 
             // label1
@@ -164,7 +164,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form3";
-            this.Text = "ТУРЫ";
+            this.Text = "Туры";
             this.Load += new System.EventHandler(this.Form3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
