@@ -35,9 +35,6 @@ D:\Программирование(лабы)\CourseWork(2018-2019)\CourseWork(2
 D:\Программирование(лабы)\CourseWork(2018-2019)\CourseWork(2018-2019)\obj\Debug\CourseWork(2018-2019).exe
 D:\Программирование(лабы)\CourseWork(2018-2019)\CourseWork(2018-2019)\obj\Debug\CourseWork(2018-2019).pdb
 C:\Users\Zver\Documents\GitHub\CS-P\CourseWork(2018-2019)\CourseWork(2018-2019)\obj\Debug\CourseWork(2018-2019).csprojAssemblyReference.cache
-C:\Users\Zver\Documents\GitHub\CS-P\CourseWork(2018-2019)\CourseWork(2018-2019)\obj\Debug\CourseWork_2018_2019_.Form1.resources
-C:\Users\Zver\Documents\GitHub\CS-P\CourseWork(2018-2019)\CourseWork(2018-2019)\obj\Debug\CourseWork_2018_2019_.Form2.resources
-C:\Users\Zver\Documents\GitHub\CS-P\CourseWork(2018-2019)\CourseWork(2018-2019)\obj\Debug\CourseWork_2018_2019_.Form3.resources
 C:\Users\Zver\Documents\GitHub\CS-P\CourseWork(2018-2019)\CourseWork(2018-2019)\obj\Debug\CourseWork_2018_2019_.Properties.Resources.resources
 C:\Users\Zver\Documents\GitHub\CS-P\CourseWork(2018-2019)\CourseWork(2018-2019)\obj\Debug\CourseWork(2018-2019).csproj.GenerateResource.cache
 C:\Users\Zver\Documents\GitHub\CS-P\CourseWork(2018-2019)\CourseWork(2018-2019)\obj\Debug\CourseWork(2018-2019).csproj.CoreCompileInputs.cache
@@ -46,6 +43,9 @@ C:\Users\Zver\Documents\GitHub\CS-P\CourseWork(2018-2019)\CourseWork(2018-2019)\
 C:\Users\Zver\Documents\GitHub\CS-P\CourseWork(2018-2019)\CourseWork(2018-2019)\bin\Debug\CourseWork(2018-2019).exe.config
 C:\Users\Zver\Documents\GitHub\CS-P\CourseWork(2018-2019)\CourseWork(2018-2019)\bin\Debug\CourseWork(2018-2019).exe
 C:\Users\Zver\Documents\GitHub\CS-P\CourseWork(2018-2019)\CourseWork(2018-2019)\bin\Debug\CourseWork(2018-2019).pdb
-C:\Users\Zver\Documents\GitHub\CS-P\CourseWork(2018-2019)\CourseWork(2018-2019)\obj\Debug\CourseWork_2018_2019_.Form4.resources
-C:\Users\Zver\Documents\GitHub\CS-P\CourseWork(2018-2019)\CourseWork(2018-2019)\obj\Debug\CourseWork_2018_2019_.Form5.resources
-C:\Users\Zver\Documents\GitHub\CS-P\CourseWork(2018-2019)\CourseWork(2018-2019)\obj\Debug\CourseWork_2018_2019_.Form6.resources
+C:\Users\Zver\Documents\GitHub\CS-P\CourseWork(2018-2019)\CourseWork(2018-2019)\obj\Debug\CourseWork_2018_2019_.Menu.resources
+C:\Users\Zver\Documents\GitHub\CS-P\CourseWork(2018-2019)\CourseWork(2018-2019)\obj\Debug\CourseWork_2018_2019_.Clients.resources
+C:\Users\Zver\Documents\GitHub\CS-P\CourseWork(2018-2019)\CourseWork(2018-2019)\obj\Debug\CourseWork_2018_2019_.Tours.resources
+C:\Users\Zver\Documents\GitHub\CS-P\CourseWork(2018-2019)\CourseWork(2018-2019)\obj\Debug\CourseWork_2018_2019_.Travels.resources
+C:\Users\Zver\Documents\GitHub\CS-P\CourseWork(2018-2019)\CourseWork(2018-2019)\obj\Debug\CourseWork_2018_2019_.Total.resources
+C:\Users\Zver\Documents\GitHub\CS-P\CourseWork(2018-2019)\CourseWork(2018-2019)\obj\Debug\CourseWork_2018_2019_.Info.resources

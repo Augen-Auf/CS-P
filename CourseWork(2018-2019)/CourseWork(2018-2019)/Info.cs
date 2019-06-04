@@ -11,7 +11,7 @@ using System.IO;
 
 namespace CourseWork_2018_2019_
 {
-    public partial class Form6 : Form
+    public partial class Info : Form
     {
         char[] d = { '#' };
         int[] kClient = new int[0];
@@ -26,7 +26,7 @@ namespace CourseWork_2018_2019_
         int[] amountOfTravel = new int[0];
         int[] cost = new int[0];
         int tourL = 0;
-        public Form6()
+        public Info()
         {
             InitializeComponent();
         }
@@ -75,9 +75,9 @@ namespace CourseWork_2018_2019_
             for (int i = 0; i < amountOfRows2; i++)
             {
                 string[] addTravel = travels[i].Split(d, StringSplitOptions.RemoveEmptyEntries);
-                kTour[i] = int.Parse(addTravel[3]);
-                amountOfTravel[i] = int.Parse(addTravel[6]);
-                cost[i] = int.Parse(addTravel[5]);
+                kTour[i] = int.Parse(addTravel[2]);
+                amountOfTravel[i] = int.Parse(addTravel[4]);
+                cost[i] = int.Parse(addTravel[3]);
                 kCl[i] = int.Parse(addTravel[1]);
             }
             try
@@ -107,7 +107,7 @@ namespace CourseWork_2018_2019_
             }
             catch { }
         }
-        private void Amount()//Подсчет количества путевок/туров
+        private void Amount()
         {
             int amountOfTours = 0;
             int amountOfTickets = 0;

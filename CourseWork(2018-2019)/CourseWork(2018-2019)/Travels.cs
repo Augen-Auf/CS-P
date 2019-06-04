@@ -11,11 +11,12 @@ using System.IO;
 
 namespace CourseWork_2018_2019_
 {
-    public partial class Form4 : Form
+    public partial class Travels : Form
     {
         int[] kodeTravel = new int[0];
         int[] amountTour = new int[0];
         int[] costOfTour = new int[0];
+        int[] totalSum = new int[0];
         int[] newcostOfTour = new int[0];
         string[] kClient = new string[0];
         string[] newkClient = new string[0];
@@ -30,7 +31,7 @@ namespace CourseWork_2018_2019_
         int amount2 = 0;
         int newStr = 0;
         int amountMainRows = 0;
-        public Form4()
+        public Travels()
         {
             InitializeComponent();
         }
@@ -38,7 +39,7 @@ namespace CourseWork_2018_2019_
         {
             LoadTravel();
             DataGV();
-            total();
+            Total();
         }
         private void LoadTravel()
         {
@@ -78,6 +79,7 @@ namespace CourseWork_2018_2019_
             Array.Resize(ref newkClient, amountMainRows);
             Array.Resize(ref newfio, amountMainRows);
             Array.Resize(ref newcostOfTour, amountMainRows);
+            Array.Resize(ref totalSum, amountMainRows);
             dataGridView2.Rows.Clear();
             if (amount1 > amount2)
             {
@@ -92,20 +94,32 @@ namespace CourseWork_2018_2019_
             for (int i = 0; i < amountMainRows; i++)
             {
                 string[] values = travel[i].Split(d, StringSplitOptions.RemoveEmptyEntries);
-                amountTour[i] = int.Parse(values[6]);
+                amountTour[i] = int.Parse(values[4]);
                 kodeTravel[i] = int.Parse(values[0]);
                 newkClient[i] = values[1];
-                newfio[i] = values[2];
-                newkTour[i] = values[3];
-                newtypeOfTour[i] = values[4];
-                newcostOfTour[i] = int.Parse(values[5]);
+                newkTour[i] = values[2];
+                newcostOfTour[i] = int.Parse(values[3]);
+                totalSum[i] = int.Parse(values[5]);
             }
         }
         private void DataGV()
         {
             for (int i = 0; i < amountMainRows; i++)
-            {
-                dataGridView2.Rows.Add(kodeTravel[i],newkClient[i],newfio[i], newkTour[i],newtypeOfTour[i], newcostOfTour[i],amountTour[i]);
+            {   
+                for (int j = 0; j < amount1; j++)
+                {
+                    for(int h=0;h<amount2;h++)
+                    {
+                        if (newkTour[i] == kTour[h])
+                            newtypeOfTour[i] = typeOfTour[h];
+                    }
+                    if (newkClient[i] == kClient[j])
+                    {
+                        newfio[i] = fio[j];
+                        dataGridView2.Rows.Add(kodeTravel[i], newkClient[i], newfio[i], newkTour[i], newtypeOfTour[i], 
+                            newcostOfTour[i], amountTour[i],totalSum[i]);
+                    }
+                }
             }
         }
         private void dataGridView2_SelectionChanged(object sender, EventArgs e)
@@ -126,7 +140,6 @@ namespace CourseWork_2018_2019_
             }
             catch { }
         }
-
         private void button1_Click(object sender, EventArgs e) //добавить
         {
             if (textBox2.Text != "" && textBox3.Text != "")
@@ -141,8 +154,8 @@ namespace CourseWork_2018_2019_
                 cost = int.Parse(textBox2.Text);
                 amount = int.Parse(textBox3.Text);
                 total = (cost * amount).ToString();
-                dataGridView2.Rows.Add(newTravel, kClient[selIndexCl],
-                kTour[selIndexTour], textBox2.Text, textBox3.Text,total);
+                dataGridView2.Rows.Add(newTravel, kClient[selIndexCl], fio[selIndexCl],
+                kTour[selIndexTour], typeOfTour[selIndexTour], textBox2.Text, textBox3.Text,total);
             }
             else
             {
@@ -164,28 +177,34 @@ namespace CourseWork_2018_2019_
         {
             int selIndexCl = comboBox1.SelectedIndex;
             int selIndexTour = comboBox2.SelectedIndex;
-            dataGridView2.Rows[newStr].Cells[5].Value = textBox3.Text;
+            dataGridView2.Rows[newStr].Cells[6].Value = textBox3.Text;
             dataGridView2.Rows[newStr].Cells[3].Value = kTour[selIndexTour];
-            dataGridView2.Rows[newStr].Cells[2].Value = kClient[selIndexCl];
-            dataGridView2.Rows[newStr].Cells[4].Value = textBox2.Text;
+            dataGridView2.Rows[newStr].Cells[4].Value = typeOfTour[selIndexTour];
+            dataGridView2.Rows[newStr].Cells[1].Value = kClient[selIndexCl];
+            dataGridView2.Rows[newStr].Cells[2].Value = fio[selIndexCl];
+            dataGridView2.Rows[newStr].Cells[5].Value = textBox2.Text;
             int profit = int.Parse(textBox2.Text) * int.Parse(textBox3.Text);
             dataGridView2.Rows[newStr].Cells[7].Value = profit;
         }
 
         private void button4_Click(object sender, EventArgs e) //сохранить
         {
-            int countStr = dataGridView2.Rows.Count;
-            string[] saveTravel = new string[countStr];
-            for (int i = 0; i < countStr; i++)
-            {
-                for (int j = 0; j < 8; j++)
+           
+                string[] total = new string[0];
+                for (int i = 0; i < dataGridView2.Rows.Count; i++)
                 {
-                    saveTravel[i] += dataGridView2.Rows[i].Cells[j].Value + "#"; File.WriteAllLines("travel.txt", saveTravel, Encoding.GetEncoding(1251));
+                    Array.Resize(ref total, total.Length + 1);
+                    total[i] += dataGridView2.Rows[i].Cells[0].Value.ToString() + "#" +
+                    dataGridView2.Rows[i].Cells[1].Value.ToString() + "#" +
+                    dataGridView2.Rows[i].Cells[3].Value.ToString() + "#" +
+                    dataGridView2.Rows[i].Cells[5].Value.ToString() + "#" +
+                    dataGridView2.Rows[i].Cells[6].Value.ToString() + "#" +
+                    dataGridView2.Rows[i].Cells[7].Value.ToString();
                 }
-            }
+                File.WriteAllLines("travel.txt", total, Encoding.GetEncoding(1251));
             MessageBox.Show("Данные успешно сохранены!");
         }
-        private void total()//Подсчет итоговой суммы
+        private void Total()
         {
             int cost = 0;
             int amount = 0;

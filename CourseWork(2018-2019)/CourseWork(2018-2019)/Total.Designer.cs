@@ -1,6 +1,6 @@
 ﻿namespace CourseWork_2018_2019_
 {
-    partial class Form5
+    partial class Total
     {
         /// <summary>
         /// Required designer variable.

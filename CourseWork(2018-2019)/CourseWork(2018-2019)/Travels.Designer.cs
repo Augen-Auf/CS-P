@@ -1,6 +1,6 @@
 ﻿namespace CourseWork_2018_2019_
 {
-    partial class Form4
+    partial class Travels
     {
         /// <summary>
         /// Required designer variable.

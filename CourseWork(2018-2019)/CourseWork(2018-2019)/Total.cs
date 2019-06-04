@@ -11,7 +11,7 @@ using System.IO;
 
 namespace CourseWork_2018_2019_
 {
-    public partial class Form5 : Form
+    public partial class Total : Form
     {
         int[] kodTravel = new int[0];
         int[] kTour = new int[0];
@@ -22,7 +22,7 @@ namespace CourseWork_2018_2019_
         char[] d = { '#' };
         int allTours = 0;
         int amountTours = 0;
-        public Form5()
+        public Total()
         {
             InitializeComponent();
         }
@@ -53,9 +53,9 @@ namespace CourseWork_2018_2019_
             for (int i = 0; i < amountTours; i++)
             {
                 string[] splitAmount = amount[i].Split(d, StringSplitOptions.RemoveEmptyEntries);
-                order[i] = int.Parse(splitAmount[3]);
-                tickets[i] = int.Parse(splitAmount[6]);
-                profit[i] = int.Parse(splitAmount[5]);
+                order[i] = int.Parse(splitAmount[2]);
+                tickets[i] = int.Parse(splitAmount[4]);
+                profit[i] = int.Parse(splitAmount[3]);
             }  
         }
         private void DataGV()
