@@ -19,7 +19,7 @@ namespace CourseWork_2018_2019_
         int[] totalSum = new int[0];
         int[] newcostOfTour = new int[0];
         string[] kClient = new string[0];
-        string[] newkClient = new string[0];
+        int[] newkClient = new int[0];
         string[] fio = new string[0];
         string[] newfio = new string[0];
         string[] kTour = new string[0];
@@ -39,7 +39,7 @@ namespace CourseWork_2018_2019_
         {
             LoadTravel();
             DataGV();
-            Total();
+           
         }
         private void LoadTravel()
         {
@@ -81,23 +81,12 @@ namespace CourseWork_2018_2019_
             Array.Resize(ref newcostOfTour, amountMainRows);
             Array.Resize(ref totalSum, amountMainRows);
             dataGridView2.Rows.Clear();
-            if (amount1 > amount2)
-            {
-                Array.Resize(ref newkTour, amount1);
-                Array.Resize(ref typeOfTour, amount1);
-            }
-            if (amount1 < amount2)
-            {
-                Array.Resize(ref newkClient, amount2);
-                Array.Resize(ref fio, amount2);
-            }
             for (int i = 0; i < amountMainRows; i++)
             {
                 string[] values = travel[i].Split(d, StringSplitOptions.RemoveEmptyEntries);
                 amountTour[i] = int.Parse(values[4]);
                 kodeTravel[i] = int.Parse(values[0]);
-                if(newkClient[i]== kClient[i])
-                    newkClient[i] = values[1];
+                newkClient[i] = int.Parse(values[1]);
                 newkTour[i] = values[2];
                 newcostOfTour[i] = int.Parse(values[3]);
                 totalSum[i] = int.Parse(values[5]);
@@ -114,11 +103,11 @@ namespace CourseWork_2018_2019_
                         if (newkTour[i] == kTour[h])
                             newtypeOfTour[i] = typeOfTour[h];
                     }
-                    if (newkClient[i] == kClient[j])
-                    {
-                        newfio[i] = fio[j];
-                        dataGridView2.Rows.Add(kodeTravel[i], newkClient[i], newfio[i], newkTour[i], newtypeOfTour[i], 
-                            newcostOfTour[i], amountTour[i],totalSum[i]);
+                    if (newkClient[i] ==int.Parse(kClient[j]) && newtypeOfTour[i] != null)
+                    { 
+                            newfio[i] = fio[j];
+                            dataGridView2.Rows.Add(kodeTravel[i], newkClient[i], newfio[i], newkTour[i], newtypeOfTour[i],
+                                newcostOfTour[i], amountTour[i], totalSum[i]);
                     }
                 }
             }
@@ -129,7 +118,7 @@ namespace CourseWork_2018_2019_
             {
                 newStr = dataGridView2.CurrentRow.Index;
                 int numOfCl = int.Parse(dataGridView2.Rows[newStr].Cells[1].Value.ToString());
-                string kodCl = kClient[numOfCl - 1];
+                string kodCl = kClient[numOfCl-1];
                 int index = Array.IndexOf(kClient, kodCl);
                 comboBox1.SelectedIndex = index;
                 int numOfTour = int.Parse(dataGridView2.Rows[newStr].Cells[3].Value.ToString());
@@ -205,19 +194,7 @@ namespace CourseWork_2018_2019_
                 File.WriteAllLines("travel.txt", total, Encoding.GetEncoding(1251));
             MessageBox.Show("Данные успешно сохранены!");
         }
-        private void Total()
-        {
-            int cost = 0;
-            int amount = 0;
-            string total = "";
-            for (int i = 0; i < amountMainRows; i++)
-            {
-                cost = int.Parse(dataGridView2.Rows[i].Cells[5].Value.ToString());
-                amount = int.Parse(dataGridView2.Rows[i].Cells[6].Value.ToString());
-                total = (cost * amount).ToString();
-                dataGridView2.Rows[i].Cells[7].Value = total;
-            }
-        }
+      
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = comboBox2.SelectedIndex;

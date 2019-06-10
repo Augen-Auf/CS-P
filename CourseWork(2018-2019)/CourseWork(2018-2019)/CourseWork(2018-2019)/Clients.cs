@@ -23,18 +23,18 @@ namespace CourseWork_2018_2019_
         {
             InitializeComponent();
         }
-        private void Form2_Load_1(object sender, EventArgs e)
-        {
-            LoadClient();
-            DataGV();
-        }
-        private void LoadClient()
+		private void Form2_Load_1(object sender, EventArgs e)
+		{
+			LoadClient();
+			DataGV();
+		}
+		private void LoadClient()
         {
             string[] client = File.ReadAllLines("client.txt", Encoding.GetEncoding(1251));
             kC = client.Length;
             Array.Resize(ref kodClient, kC);
             Array.Resize(ref fio, kC);
-            for (int i = 0; i < kC; i++)
+            for(int i = 0;i < kC;i++)
             {
                 string[] splitClient = client[i].Split(d, StringSplitOptions.RemoveEmptyEntries);
                 kodClient[i] = int.Parse(splitClient[0]);
@@ -44,17 +44,17 @@ namespace CourseWork_2018_2019_
         private void DataGV()
         {
             dataGridView1.Rows.Clear();
-            for (int i = 0; i < kC; i++)
+            for (int i=0; i < kC;i++)
             {
                 dataGridView1.Rows.Add(kodClient[i], fio[i]);
             }
         }
-
+        
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+		private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             try
             {
@@ -65,8 +65,8 @@ namespace CourseWork_2018_2019_
                 textBox2.Text = dataGridView1.Rows[newStr].Cells[1].Value.ToString();
             }
             catch { }
-        }
-        private void button1_Click(object sender, EventArgs e) //Изменить
+		}
+		private void button1_Click(object sender, EventArgs e) //Изменить
         {
             dataGridView1.Rows[newStr].Cells[1].Value = textBox2.Text;
         }
@@ -76,13 +76,14 @@ namespace CourseWork_2018_2019_
             int newKClient = dataGridView1.RowCount + 1;
             string newFio = textBox2.Text;
             textBox1.Text = newKClient.ToString();
-            dataGridView1.Rows.Add(newKClient, newFio);
+            dataGridView1.Rows.Add(newKClient,newFio);
         }
-        int a = 0;
+
         private void button3_Click(object sender, EventArgs e) //Сохранить
         {
             int countStr = dataGridView1.Rows.Count;
             string[] saveClient = new string[countStr];
+            string[] saveOutClient = new string[countStr];
             for (int i = 0; i < countStr; i++)
             {
                 for (int j = 0; j < 2; j++)
@@ -92,50 +93,14 @@ namespace CourseWork_2018_2019_
                 }
             }
             MessageBox.Show("Данные успешно сохранены!");
-
-            int lineNumber = 0;
-            string[] saveTravels = File.ReadAllLines("travel.txt", Encoding.GetEncoding(1251));
-
-            for (int i = 0; i < saveTravels.Length; i++)
-            {
-
-                lineNumber++;
-                if (lineNumber == a)
-                {
-                    //saveTravels[i].Replace(saveTravels[i], "");
-                    
-                }
-                
-                File.WriteAllLines("travel.txt", saveTravels, Encoding.GetEncoding(1251));
-
-               
-
-            }
-               
-            
-        
-
-
         }
         private void button4_Click(object sender, EventArgs e) //Удалить
         {
-            int cond = newStr + 1;
-            for (int i = 0; i < kC; i++)
-            {
-                if (cond == kodClient[i])
-                {
-                     a = cond;
-                }
-
-
-            }
             dataGridView1.Rows.RemoveAt(newStr);
             for (int n=newStr;n<dataGridView1.RowCount;n++)
             {
                 dataGridView1.Rows[n].Cells[0].Value = n + 1;
             }
-            
-               
         }
     }
 }
