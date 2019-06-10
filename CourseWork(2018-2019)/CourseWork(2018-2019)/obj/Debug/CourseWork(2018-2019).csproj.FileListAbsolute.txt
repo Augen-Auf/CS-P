@@ -49,3 +49,18 @@ C:\Users\Zver\Documents\GitHub\CS-P\CourseWork(2018-2019)\CourseWork(2018-2019)\
 C:\Users\Zver\Documents\GitHub\CS-P\CourseWork(2018-2019)\CourseWork(2018-2019)\obj\Debug\CourseWork_2018_2019_.Travels.resources
 C:\Users\Zver\Documents\GitHub\CS-P\CourseWork(2018-2019)\CourseWork(2018-2019)\obj\Debug\CourseWork_2018_2019_.Total.resources
 C:\Users\Zver\Documents\GitHub\CS-P\CourseWork(2018-2019)\CourseWork(2018-2019)\obj\Debug\CourseWork_2018_2019_.Info.resources
+D:\Супер пупер папка\CourseWork(2018-2019)\CourseWork(2018-2019)\bin\Debug\CourseWork(2018-2019).exe.config
+D:\Супер пупер папка\CourseWork(2018-2019)\CourseWork(2018-2019)\bin\Debug\CourseWork(2018-2019).exe
+D:\Супер пупер папка\CourseWork(2018-2019)\CourseWork(2018-2019)\bin\Debug\CourseWork(2018-2019).pdb
+D:\Супер пупер папка\CourseWork(2018-2019)\CourseWork(2018-2019)\obj\Debug\CourseWork(2018-2019).csprojAssemblyReference.cache
+D:\Супер пупер папка\CourseWork(2018-2019)\CourseWork(2018-2019)\obj\Debug\CourseWork_2018_2019_.Menu.resources
+D:\Супер пупер папка\CourseWork(2018-2019)\CourseWork(2018-2019)\obj\Debug\CourseWork_2018_2019_.Clients.resources
+D:\Супер пупер папка\CourseWork(2018-2019)\CourseWork(2018-2019)\obj\Debug\CourseWork_2018_2019_.Tours.resources
+D:\Супер пупер папка\CourseWork(2018-2019)\CourseWork(2018-2019)\obj\Debug\CourseWork_2018_2019_.Travels.resources
+D:\Супер пупер папка\CourseWork(2018-2019)\CourseWork(2018-2019)\obj\Debug\CourseWork_2018_2019_.Total.resources
+D:\Супер пупер папка\CourseWork(2018-2019)\CourseWork(2018-2019)\obj\Debug\CourseWork_2018_2019_.Info.resources
+D:\Супер пупер папка\CourseWork(2018-2019)\CourseWork(2018-2019)\obj\Debug\CourseWork_2018_2019_.Properties.Resources.resources
+D:\Супер пупер папка\CourseWork(2018-2019)\CourseWork(2018-2019)\obj\Debug\CourseWork(2018-2019).csproj.GenerateResource.cache
+D:\Супер пупер папка\CourseWork(2018-2019)\CourseWork(2018-2019)\obj\Debug\CourseWork(2018-2019).csproj.CoreCompileInputs.cache
+D:\Супер пупер папка\CourseWork(2018-2019)\CourseWork(2018-2019)\obj\Debug\CourseWork(2018-2019).exe
+D:\Супер пупер папка\CourseWork(2018-2019)\CourseWork(2018-2019)\obj\Debug\CourseWork(2018-2019).pdb
